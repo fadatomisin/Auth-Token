@@ -56,7 +56,7 @@ class UserView(APIView):
             raise AuthenticationFailed('Unauthenticated')
         
         try:
-            payload = jwt.encode(token, 'secret', algorithm=['HS256'])
+            payload = jwt.encode(token, 'secret', algorithm='HS256')
         except jwt.ExpiredSignatureError:
             raise AuthenticationFailed('Unauthenticated')
         
